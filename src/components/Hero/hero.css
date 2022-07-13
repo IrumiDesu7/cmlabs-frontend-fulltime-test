@@ -1,0 +1,11 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9fafc;
+  height: 300px;
+}
+.hero-container * {
+  margin: 7px;
+}
