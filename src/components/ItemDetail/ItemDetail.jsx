@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './itemDetail.css';
 import { useParams } from 'react-router-dom';
+import YoutubeEmbed from '../YoutubeEmbed/YoutubeEmbed';
 
 export default function ItemDetail() {
   const { ingredientsId } = useParams();
@@ -14,6 +15,7 @@ export default function ItemDetail() {
   }
 
   const ingredientElement = getIngredients()
+    /* Filtering out empty strings and spaces and then mapping over the array to return a list item. */
     .filter((ingredient) => {
       if (ingredient === '' || ingredient === ' ') {
         return false;
@@ -26,6 +28,7 @@ export default function ItemDetail() {
     });
 
   const measureElement = getMeasures()
+    /* Filtering out empty strings and spaces and then mapping over the array to return a list item. */
     .filter((measure) => {
       if (measure === '' || measure === ' ') {
         return false;
@@ -37,17 +40,9 @@ export default function ItemDetail() {
       return <li key={index}>{measure}</li>;
     });
 
-  // const ingredientElement = getIngredients()
-  //   .filter((ingredient) => ingredient !== '')
-  //   .map((ingredient, index) => {
-  //     return <li key={index}>{ingredient}</li>;
-  //   });
-  // const measureElement = getMeasures()
-  //   .filter((measure) => measure !== '')
-  //   .map((measure, index) => {
-  //     return <li key={index}>{measure}</li>;
-  //   });
-
+  /* This is a hook that is used to perform side effects in function components. It serves the same
+  purpose as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` in React classes,
+  but unified into a single API. */
   useEffect(() => {
     async function getItemDetails() {
       const rest = await fetch(
@@ -86,7 +81,9 @@ export default function ItemDetail() {
             </div>
           </div>
         </div>
-        <div className='bottom-layout'></div>
+        <div className='bottom-layout'>
+          <YoutubeEmbed embedId='rokGy0huYEA' />
+        </div>
       </div>
     </div>
   );

@@ -20,3 +20,7 @@
 .ingredient-list li {
   margin-bottom: 3px;
 }
+
+.bottom-layout {
+  width: 100%;
+}

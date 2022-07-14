@@ -7,6 +7,7 @@ export default function Ingredients() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredIngredients, setFilteredIngredients] = useState([]);
 
+  /* Mapping through the array of ingredients and returning a list item with a link to the ingredient. */
   const ingredientsElement = allIngredients.map((data) => {
     return (
       <li key={data.idIngredient}>
@@ -15,6 +16,7 @@ export default function Ingredients() {
     );
   });
 
+  /* Mapping through the array of filtered ingredients and returning a list item with a link to the ingredient. */
   const filteredIngredientsElements = filteredIngredients.map((data) => {
     return (
       <li key={data.idIngredient}>
