@@ -17,7 +17,7 @@ export default function ItemDetail() {
   const ingredientElement = getIngredients()
     /* Filtering out empty strings and spaces and then mapping over the array to return a list item. */
     .filter((ingredient) => {
-      if (ingredient === '' || ingredient === ' ') {
+      if (ingredient === '' || ingredient === ' ' || ingredient === null) {
         return false;
       } else {
         return true;
@@ -30,7 +30,7 @@ export default function ItemDetail() {
   const measureElement = getMeasures()
     /* Filtering out empty strings and spaces and then mapping over the array to return a list item. */
     .filter((measure) => {
-      if (measure === '' || measure === ' ') {
+      if (measure === '' || measure === ' ' || measure === null) {
         return false;
       } else {
         return true;
@@ -78,6 +78,7 @@ export default function ItemDetail() {
           </div>
         </div>
         <div className='bottom-layout'>
+          <h4>Tutorials</h4>
           {itemDetails.length !== 0 && (
             <YoutubeEmbed
               embedId={`${itemDetails.strYoutube.substring(

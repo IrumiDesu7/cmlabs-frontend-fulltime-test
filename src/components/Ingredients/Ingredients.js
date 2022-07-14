@@ -61,10 +61,10 @@ export default function Ingredients() {
   }, []);
 
   return (
-    <main>
+    <main className='ingredients-container'>
       <h2 className='title'>Ingredients</h2>
       <div className='search-container'>
-        <label htmlFor='search'>Search</label>
+        <label htmlFor='search'>Search the recipe you're looking for</label>
         <input
           type='search'
           name='search'

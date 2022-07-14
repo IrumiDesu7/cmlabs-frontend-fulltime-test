@@ -9,3 +9,6 @@
 .hero-container * {
   margin: 7px;
 }
+.hero-container h1 {
+  text-align: center;
+}

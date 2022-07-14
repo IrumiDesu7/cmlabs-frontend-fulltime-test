@@ -8,15 +8,11 @@ export default function Navbar() {
         <li>
           <NavLink to='/'>Home</NavLink>
         </li>
-        <li>
-          <NavLink to='foods'>Foods</NavLink>
-        </li>
+        <li>Foods</li>
         <li>
           <NavLink to='ingredients'>Ingredients</NavLink>
         </li>
-        <li>
-          <NavLink to='local-culinary'>Local Culinary</NavLink>
-        </li>
+        <li>Local Culinary</li>
       </ul>
     </nav>
   );
