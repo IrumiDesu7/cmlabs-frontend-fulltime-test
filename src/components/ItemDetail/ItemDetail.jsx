@@ -60,7 +60,7 @@ export default function ItemDetail() {
       <div className='content-container'>
         <div className='top'>
           <div className='left-layout'>
-            <p className='area'>{itemDetails.strArea}</p>
+            <p className='area'>{itemDetails.strArea} Food</p>
             <img src={`${itemDetails.strMealThumb}`} alt='food' />
           </div>
           <div className='right-layout'>
