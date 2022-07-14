@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to run
 
+I deployed this project on [netlify](https://eclectic-biscotti-d372f1.netlify.app/) you should check it out!
 In the project directory, type the following command in terminal:
 
 ### `npm start`
