@@ -56,15 +56,11 @@ export default function ItemDetail() {
 
   return (
     <div className='item-detail-container'>
-      <button onClick={() => console.log(getMeasures())}>
-        print recipe element
-      </button>
       <h2 className='item-title'>{itemDetails.strMeal}</h2>
       <div className='content-container'>
         <div className='top'>
           <div className='left-layout'>
             <p className='area'>{itemDetails.strArea}</p>
-
             <img src={`${itemDetails.strMealThumb}`} alt='food' />
           </div>
           <div className='right-layout'>
@@ -82,7 +78,14 @@ export default function ItemDetail() {
           </div>
         </div>
         <div className='bottom-layout'>
-          <YoutubeEmbed embedId='rokGy0huYEA' />
+          {itemDetails.length !== 0 && (
+            <YoutubeEmbed
+              embedId={`${itemDetails.strYoutube.substring(
+                32,
+                itemDetails.strYoutube.length
+              )}`}
+            />
+          )}
         </div>
       </div>
     </div>
