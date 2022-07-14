@@ -28,7 +28,7 @@ export default function Home() {
   useEffect(() => {
     async function getIngredientsDetails() {
       const rest = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken`
+        `https://www.themealdb.com/api/json/v1/1/filter.php?i=salmon`
       );
       const data = await rest.json();
       setIngredients(data.meals);
@@ -39,6 +39,10 @@ export default function Home() {
     <>
       <Hero />
       <main className='home-container'>
+        <h2>
+          Click <Link to='ingredients'>here</Link> to find recipes by
+          ingredients
+        </h2>
         <h2>Check out these recommended recipes for you</h2>
         <div className='recommended-container'>{detailsElement}</div>
       </main>
