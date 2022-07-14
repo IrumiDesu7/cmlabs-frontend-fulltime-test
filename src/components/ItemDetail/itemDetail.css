@@ -35,12 +35,15 @@
   color: brown;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
   .item-detail-container {
     padding: 30px 20px;
   }
   .top {
     flex-direction: column;
+  }
+  .item-title {
+    text-align: center;
   }
   .left-layout {
     display: flex;
