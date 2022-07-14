@@ -1,0 +1,11 @@
+.ingredients-container {
+  padding: 200px;
+}
+.ingredients-list a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+.ingredients-list a:hover {
+  color: orange;
+}

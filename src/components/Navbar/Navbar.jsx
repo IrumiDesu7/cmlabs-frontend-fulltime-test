@@ -9,13 +9,13 @@ export default function Navbar() {
           <NavLink to='/'>Home</NavLink>
         </li>
         <li>
-          <NavLink to='/'>Foods</NavLink>
+          <NavLink to='foods'>Foods</NavLink>
         </li>
         <li>
           <NavLink to='ingredients'>Ingredients</NavLink>
         </li>
         <li>
-          <NavLink to='/'>Local Culinary</NavLink>
+          <NavLink to='local-culinary'>Local Culinary</NavLink>
         </li>
       </ul>
     </nav>

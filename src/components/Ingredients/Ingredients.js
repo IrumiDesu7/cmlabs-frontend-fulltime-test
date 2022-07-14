@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ingredients.css';
 
 export default function Ingredients() {
@@ -7,26 +8,45 @@ export default function Ingredients() {
   const [filteredIngredients, setFilteredIngredients] = useState([]);
 
   const ingredientsElement = allIngredients.map((data) => {
-    return <li key={data.idIngredient}>{data.strIngredient}</li>;
+    return (
+      <li key={data.idIngredient}>
+        <Link to={data.strIngredient}>{data.strIngredient}</Link>
+      </li>
+    );
   });
 
   const filteredIngredientsElements = filteredIngredients.map((data) => {
-    return <li key={data.idIngredient}>{data.strIngredient}</li>;
+    return (
+      <li key={data.idIngredient}>
+        <Link to={`${data.strIngredient}`}>{data.strIngredient}</Link>
+      </li>
+    );
   });
 
-  function handleSearch() {
-    setFilteredIngredients(
-      allIngredients
-        .filter((data) => data.strIngredient.includes(`${searchQuery}`))
-        .map((data) => {
-          return {
-            idIngredient: `${data.idIngredient}`,
-            strIngredient: `${data.strIngredient}`,
-          };
-        })
-    );
+  /**
+   * If the search query is empty, set the filtered ingredients to an empty array. Otherwise, set the
+   * filtered ingredients to the ingredients that match the search query.
+   * @param e - the event object
+   */
+  function handleChange(e) {
+    setSearchQuery(e.target.value);
+    searchQuery === ''
+      ? setFilteredIngredients([])
+      : setFilteredIngredients(
+          allIngredients
+            .filter((data) =>
+              data.strIngredient.toLowerCase().includes(`${searchQuery}`)
+            )
+            .map((data) => {
+              return {
+                idIngredient: `${data.idIngredient}`,
+                strIngredient: `${data.strIngredient}`,
+              };
+            })
+        );
   }
 
+  /* A hook that is used to fetch data. */
   useEffect(() => {
     async function getIngredients() {
       const rest = await fetch(
@@ -48,27 +68,24 @@ export default function Ingredients() {
           name='search'
           id='search'
           placeholder='chicken'
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleChange}
           value={searchQuery}
         />
-        <button onClick={handleSearch}>Search</button>
         <button
-          onClick={() =>
-            console.log(
-              allIngredients
-                .filter((data) => data.strIngredient.includes(`${searchQuery}`))
-                .map((data) => data.strIngredient)
-            )
-          }
+          onClick={() => {
+            setFilteredIngredients([]);
+            setSearchQuery('');
+          }}
         >
-          Check filtered ingredients status
+          Clear
         </button>
       </div>
-      <ul>
-        {/* {filteredIngredients.length === 0
+
+      <ul className='ingredients-list'>
+        {/* Rendering element depending on the length of filteredIngredients */}
+        {filteredIngredients.length === 0
           ? ingredientsElement
-          : filteredIngredientsElements} */}
-        {filteredIngredientsElements}
+          : filteredIngredientsElements}
       </ul>
     </main>
   );
