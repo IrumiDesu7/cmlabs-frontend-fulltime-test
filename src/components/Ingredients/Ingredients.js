@@ -84,7 +84,10 @@ export default function Ingredients() {
           Clear
         </button>
       </div>
-
+      <h4>
+        Click on the ingredients you're looking for and we'll list the available
+        recipes!
+      </h4>
       <ul className='ingredients-list'>
         {/* Rendering element depending on the length of filteredIngredients */}
         {filteredIngredients.length === 0
