@@ -37,7 +37,9 @@ export default function Ingredients() {
       : setFilteredIngredients(
           allIngredients
             .filter((data) =>
-              data.strIngredient.toLowerCase().includes(`${searchQuery}`)
+              data.strIngredient
+                .toLowerCase()
+                .includes(`${searchQuery}`.toLowerCase())
             )
             .map((data) => {
               return {
