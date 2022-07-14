@@ -1,0 +1,22 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+}
+.left-layout img {
+  max-width: 400px;
+  border-radius: 10%;
+}
+.recipe-lists {
+  display: flex;
+}
+.ingredient-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+.measure-list li,
+.ingredient-list li {
+  margin-bottom: 3px;
+}

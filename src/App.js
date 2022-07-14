@@ -29,13 +29,3 @@ function App() {
 }
 
 export default App;
-
-/* <Routes>
-  <Route path='/' element={<Home />} />
-  <Route path='foods' />
-  <Route path='ingredients' element={<Ingredients />} />
-  <Route path='ingredients/:ingredients' element={<IngredientsDetails />} />
-  <Route path='ingredients/:ingredients/:detail' element={<ItemDetail />} />
-  <Route path='local-culinary' />
-</Routes>;
-*/

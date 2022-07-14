@@ -4,7 +4,6 @@ import './ingredientDetails.css';
 
 export default function IngredientsDetails() {
   const { ingredientsName } = useParams();
-  const params = useParams();
   const [ingredients, setIngredients] = useState([
     { strMealThumb: '', strMeal: '' },
   ]);
@@ -46,7 +45,6 @@ export default function IngredientsDetails() {
       setIngredients(data.meals);
     }
     getIngredientsDetails();
-    console.log(ingredientsName);
   }, [ingredientsName]);
 
   return (
